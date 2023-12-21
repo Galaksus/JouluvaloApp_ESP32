@@ -96,7 +96,6 @@ private:
 
             if (pCharacteristic->getUUID().equals(BLEUUID(COMMON_CHARACTERISTIC_UUID)))
             {
-                // Call outboard motor speed control methods
                 Serial.print("COMMON_CHARACTERISTIC_UUID Received data: ");
                 Serial.println(intValue);
                 lightShowMode = intValue;
@@ -123,7 +122,22 @@ private:
 
         void onRead(BLECharacteristic *pCharacteristic)
         {
-            // Add your logic for handling read events here
+            /*
+            * Sends lightShowMode, brightness and fadeDelay to corresponding UUIDs on read request
+            */
+            Serial.println("Read request received");
+            if (pCharacteristic->getUUID().equals(BLEUUID(COMMON_CHARACTERISTIC_UUID)))
+            {
+
+            }
+            else if (pCharacteristic->getUUID().equals(BLEUUID(DIMMER_CHARACTERISTIC_UUID)))
+            {
+
+            }
+            else if (pCharacteristic->getUUID().equals(BLEUUID(DELAY_CHARACTERISTIC_UUID)))
+            {
+
+            }
         }
     };
 };
