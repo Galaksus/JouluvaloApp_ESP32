@@ -1,3 +1,5 @@
+Bluetooth based wireless control of christmas lights from Android mobile phone.
+
 Link to other half of this project (Android UI implementation):
 
 https://github.com/Galaksus/JouluvaloApp
